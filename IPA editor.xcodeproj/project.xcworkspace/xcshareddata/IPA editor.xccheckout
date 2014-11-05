@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C47F29D9-5AE1-4639-9D6A-3501B8AB3333</string>
+	<key>IDESourceControlProjectName</key>
+	<string>IPA editor</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>AEA3FC5448622B7661CF065A8F000B03E86F4D1B</key>
+		<string>https://github.com/mvadim-/IPAEditor.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>IPA editor.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AEA3FC5448622B7661CF065A8F000B03E86F4D1B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mvadim-/IPAEditor.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>AEA3FC5448622B7661CF065A8F000B03E86F4D1B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AEA3FC5448622B7661CF065A8F000B03E86F4D1B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IPA%20editor</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -17,45 +17,44 @@ class ViewController: NSViewController {
     @IBOutlet weak var provisionFileLabel: NSTextField!
     @IBOutlet weak var imageFileLabel: NSTextField!
     
-    @IBAction func OpenIpaFile(sender: AnyObject)
-    {
-        self.ipaFileLabel.stringValue = self.openFileWithTypesArray(["ipa"],allowsMultipleSelection: false)[0].lastPathComponent
-    }
-    
-    @IBAction func openProvisinFile(sender: AnyObject)
-    {
-        self.provisionFileLabel.stringValue = self.openFileWithTypesArray(["mobileprovision"],allowsMultipleSelection: false)[0].lastPathComponent
-    }
-    
-    @IBAction func openImageFile(sender: AnyObject)
-    {
-        let urlArr : Array = self.openFileWithTypesArray(["png"],allowsMultipleSelection: true)
-        var url : String = ""
-        for currUrl in urlArr
-        {
-            url = "\(url.stringByAppendingString(currUrl.lastPathComponent)) "
+    @IBAction func OpenIpaFile(sender: AnyObject) {
+        if let string = openFileWithTypesArray(["ipa"],allowsMultipleSelection: false)? {
+            ipaFileLabel.stringValue = string[0].lastPathComponent
+        } else {
+            ipaFileLabel.stringValue = ""
         }
-        
-        self.imageFileLabel.stringValue = url
     }
     
-    func openFileWithTypesArray(fileTypesArray:Array<String>,allowsMultipleSelection:Bool) -> Array<AnyObject>
-    {
-        var openDlg : NSOpenPanel       = NSOpenPanel()
+    @IBAction func openProvisinFile(sender: AnyObject) {
+        if let string = openFileWithTypesArray(["mobileprovision"],allowsMultipleSelection: false) {
+            provisionFileLabel.stringValue = string[0].lastPathComponent
+        } else {
+            provisionFileLabel.stringValue = ""
+        }
+    }
+    
+    @IBAction func openImageFile(sender: AnyObject) {
+        if let urlArr : Array  = openFileWithTypesArray(["png"],allowsMultipleSelection: true) {
+            var url : String?
+            for currUrl in urlArr {
+                url = "\(url!.stringByAppendingString(currUrl.lastPathComponent)) "
+            }
+            imageFileLabel.stringValue = url!
+        } else {
+            imageFileLabel.stringValue = ""
+        }
+    }
+    
+    func openFileWithTypesArray(fileTypesArray:Array<String>,allowsMultipleSelection:Bool) -> Array<AnyObject>? {
+        let openDlg : NSOpenPanel       = NSOpenPanel()
         openDlg.canChooseFiles          = true
         openDlg.allowedFileTypes        = fileTypesArray
         openDlg.allowsMultipleSelection = allowsMultipleSelection
-        if openDlg.runModal() == NSOKButton
-        {
+        if openDlg.runModal() == NSOKButton {
             return openDlg.URLs
-        } else if openDlg.runModal() == NSCancelButton {
-            return [""]
-        } else{
-                        let myPopup:NSAlert = NSAlert()
-                        myPopup.messageText = "Error!";
-                        myPopup.informativeText = "Something go wrong."
-                        myPopup.runModal()
-            return [""]
+        }
+        else {
+            return nil
         }
     }
     
