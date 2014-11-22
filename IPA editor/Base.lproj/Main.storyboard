@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <scenes>
@@ -760,7 +761,7 @@
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GI2-V5-iYn">
                                 <rect key="frame" x="20" y="70" width="440" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Developer certificate SHA1" drawsBackground="YES" id="jvI-0F-tj6">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="004D3AE917F2A68CB7A7914BE61AC1BF787146E7" placeholderString="Developer certificate SHA1" drawsBackground="YES" id="jvI-0F-tj6">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -787,6 +788,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="Generate:" target="XfG-lQ-9wD" id="zwx-JJ-qVt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -829,6 +833,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="certificatSHA1" destination="GI2-V5-iYn" id="1OZ-Ok-Dhv"/>
                         <outlet property="imageFileBtn" destination="og8-CQ-0Jg" id="bv0-Ch-drX"/>
                         <outlet property="imageFileLabel" destination="nbO-cz-Z0n" id="7mA-2g-f24"/>
                         <outlet property="ipaFileBtn" destination="WDN-ui-4bP" id="svF-6E-DY2"/>
